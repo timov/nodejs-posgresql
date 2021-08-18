@@ -52,15 +52,16 @@ async function create(client) {
 
   const data = helper.emptyOrRows(rows);
 
-  if (data) {
+  if (data.length) {
     const result = await db.query(
       "UPDATE client SET sync_state = $1, sync_message = $2, sync_date = $3 WHERE title = $4",
       [client.sync_state, client.sync_message, client.sync_date, client.title]
     );
-    let message = "Error in updating client";
+
+    let message = "result";
 
     if (result.length) {
-      message = "Client updated successfully";
+      message = "result";
     }
 
     return { message };
