@@ -58,10 +58,10 @@ async function create(client) {
       [client.sync_state, client.sync_message, client.title]
     );
 
-    let message = "result";
+    let message = "Error in updating client";
 
     if (result.length) {
-      message = "result";
+      message = "Client updated successfully";
     }
 
     return { message };
