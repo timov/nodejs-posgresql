@@ -6,5 +6,5 @@ CREATE TABLE client (
     sync_date timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-INSERT INTO client (id, title, sync_state, sync_message, sync_date) VALUES 
+INSERT INTO client (id, title, sync_state, sync_message) VALUES 
 (1, 'Joxx', 'Not started', 'Not started')
