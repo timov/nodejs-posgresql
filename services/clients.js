@@ -46,7 +46,7 @@ function validateCreate(client) {
 async function create(client) {
   validateCreate(client);
 
-  const rows = await db.query("SELECT * FROM client WHERE title = '$1'", [
+  const rows = await db.query("SELECT * FROM client WHERE title = $1", [
     client.title
   ]);
 
@@ -54,7 +54,7 @@ async function create(client) {
 
   if (data) {
     const result = await db.query(
-      "UPDATE client SET sync_state = $1, sync_message = $2, sync_date = $3 WHERE title = '$4'",
+      "UPDATE client SET sync_state = $1, sync_message = $2, sync_date = $3 WHERE title = $4",
       [client.sync_state, client.sync_message, client.sync_date, client.title]
     );
     let message = "Error in updating client";
