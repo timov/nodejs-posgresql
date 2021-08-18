@@ -1,4 +1,4 @@
-CREATE TABLE client (
+CREATE TABLE client(
     id SERIAL PRIMARY KEY,
     title character varying(255) NOT NULL UNIQUE,
     sync_state character varying(255) NOT NULL,
