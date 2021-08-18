@@ -5,7 +5,7 @@ const config = require("../config");
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    "SELECT id, title, sync_state, sync_message, sync_date, FROM client",
+    "SELECT id, title, sync_state, sync_message, sync_date FROM client",
     [offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
