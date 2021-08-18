@@ -67,7 +67,7 @@ async function create(client) {
   }
 
   const result = await db.query(
-    "INSERT INTO client(title, sync_state, sync_message, sync_date) VALUES ($1, $2, $3, $4) RETURNING *",
+    "INSERT INTO client (title, sync_state, sync_message, sync_date) VALUES ($1, $2, $3, $4) RETURNING *",
     [client.title, client.sync_state, client.sync_message, client.sync_date]
   );
   let message = "Error in creating client";

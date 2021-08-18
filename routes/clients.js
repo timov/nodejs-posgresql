@@ -13,7 +13,7 @@ router.get("/", async function (req, res, next) {
 });
 
 /* POST clients */
-router.post("/", async function (req, res, next) {
+router.post("/", async function (req, res) {
   try {
     res.json(await clients.create(req.body));
   } catch (err) {
