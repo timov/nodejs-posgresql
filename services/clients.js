@@ -58,7 +58,7 @@ async function create(client) {
   if (data) {
     const result = await db.query(
       "UPDATE client SET sync_state = $1, sync_message = $2, sync_date = $3 WHERE title = $4",
-      [client.sync_state, client.sync_message, sync_date, client.title]
+      [client.sync_state, client.sync_message, client.sync_date, client.title]
     );
     let message = "Error in updating client";
 
@@ -71,7 +71,7 @@ async function create(client) {
 
   const result = await db.query(
     "INSERT INTO client(title, sync_state, sync_message, sync_date) VALUES ($1, $2, $3, $4) RETURNING *",
-    [client.title, client.sync_state, client.sync_message, sync_date]
+    [client.title, client.sync_state, client.sync_message, client.sync_date]
   );
   let message = "Error in creating client";
 
