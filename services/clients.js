@@ -49,9 +49,9 @@ function validateCreate(client) {
 async function create(client) {
   validateCreate(client);
 
-  const rows = await db.query(
-    "SELECT * FROM client WHERE title = $1"[client.title]
-  );
+  const rows = await db.query("SELECT * FROM client WHERE title = $1", [
+    client.title
+  ]);
 
   const data = helper.emptyOrRows(rows);
 
