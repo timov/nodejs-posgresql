@@ -54,7 +54,7 @@ async function create(client) {
 
   if (data.length) {
     const result = await db.query(
-      "UPDATE client SET sync_state = $1, sync_message = $2 WHERE title = $4",
+      "UPDATE client SET sync_state = $1, sync_message = $2 WHERE title = $3",
       [client.sync_state, client.sync_message, client.title]
     );
 
